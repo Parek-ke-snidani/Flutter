@@ -6,17 +6,13 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import os
 import time
-from playsound import playsound
+import winsound
 
 # Nastavení Geckodriveru
 options = Options()
 #options.add_argument("--headless")  # Volitelné: spuštění bez otevření okna
 service = Service("C:/Users/BIKEMAX/Downloads/geckodriver.exe")  # Zadejte správnou cestu k Geckodriveru
-driver = webdriver.Firefox(service=service, options=options)
 
-def upozornit():
-    os.system("powercfg -change monitor-timeout-ac 0")  # Zapne obrazovku (widnows)
-    playsound("Dobre_rano_curaci.mp3")  # Spustí zvuk
 
 # Seznam specifických dnů
 povolene_dny = {"July 30", "July 31", "August 1", "August 2", "August 3", "August 4", "August 5", "August 6"}
@@ -47,6 +43,7 @@ def kontrolovat_terminy():
 
         if volna_mista:
             print("Volné místo:", ", ".join(volna_mista))
+            winsound.PlaySound("Dobre_rano_curaci.wav", winsound.SND_FILENAME)
         else:
             print("Žádný volný termín.")
 
@@ -55,9 +52,6 @@ def kontrolovat_terminy():
 # Nekonečná smyčka pro opakovanou kontrolu každých 31 minut
 while True:
     volna_mista = kontrolovat_terminy()
-    
-    if volna_mista:
-        upozornit()
     
     time.sleep(31 * 60)  # Počkej 31 minut
 
