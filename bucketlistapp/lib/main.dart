@@ -572,7 +572,7 @@ class SettingsScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    InkWell(
+                    GestureDetector(
                       onTap: () {
                         _launchUrl('https://github.com/Parek-ke-snidani');
                       },
@@ -585,7 +585,7 @@ class SettingsScreen extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(width: 32),
-                    InkWell(
+                    GestureDetector(
                       onTap: () {
                         _launchUrl('https://buymeacoffee.com/pseudocereal');
                       },
@@ -608,8 +608,11 @@ class SettingsScreen extends StatelessWidget {
   }
 
   void _launchUrl(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
+    Uri uri = Uri.parse(url);
+    if (await canLaunchUrl(uri)) {
+      await launchUrl(uri, mode: LaunchMode.externalApplication);
+    } else {
+      throw 'Could not launch $url';
     }
   }
 }
@@ -618,14 +621,14 @@ class SettingsScreen extends StatelessWidget {
 String getText(String key, String language) {
   final translations = {
     'cs': {
-      'appTitle': 'Úkoly',
+      'appTitle': 'Simple bucketlist',
       'activeTasksTab': 'Aktivní',
       'completedTasksTab': 'Dokončené',
       'settingsTab': 'Nastavení',
       'addTask': 'Přidat cíl',
       'addNewTask': 'Přidat nový cíl',
-      'editTask': 'Upravit úkol',
-      'taskTitle': 'Název úkolu',
+      'editTask': 'Upravit cíl',
+      'taskTitle': 'Název cíle',
       'cancel': 'Zrušit',
       'add': 'Přidat',
       'save': 'Uložit',
@@ -641,14 +644,14 @@ String getText(String key, String language) {
           'Tato aplikace vám pomáhá udržet přehled o vašich cílech a zvyšovat motivaci.',
     },
     'en': {
-      'appTitle': 'Tasks',
+      'appTitle': 'Simple bucketlist',
       'activeTasksTab': 'Active',
       'completedTasksTab': 'Completed',
       'settingsTab': 'Settings',
-      'addTask': 'Add Task',
+      'addTask': 'Add Goal',
       'addNewTask': 'Add New goal',
-      'editTask': 'Edit Task',
-      'taskTitle': 'Task Title',
+      'editTask': 'Edit Goal',
+      'taskTitle': 'Goal Title',
       'cancel': 'Cancel',
       'add': 'Add',
       'save': 'Save',
@@ -661,7 +664,7 @@ String getText(String key, String language) {
       'systemTheme': 'System',
       'thankYou': 'Thank you for using the app!',
       'appDescription':
-          'This app helps you keep track of your tasks and increase motivation.',
+          'This app helps you keep track of your goals and increase motivation.',
     },
   };
 
