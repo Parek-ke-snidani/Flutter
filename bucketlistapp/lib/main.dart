@@ -574,13 +574,14 @@ class SettingsScreen extends StatelessWidget {
                   children: [
                     GestureDetector(
                       onTap: () {
-                        _launchUrl('https://github.com/Parek-ke-snidani');
+                        _launchUrl(
+                            'https://parek-ke-snidani.github.io/Buckwheatstudio/');
                       },
                       child: const Column(
                         children: [
                           Icon(Icons.code, size: 32),
                           SizedBox(height: 8),
-                          Text('GitHub'),
+                          Text('Website'),
                         ],
                       ),
                     ),

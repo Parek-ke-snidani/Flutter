@@ -1,0 +1,98 @@
+{
+  "@@locale": "en",
+  "appTitle": "FinTrack",
+  "welcomeBack": "Welcome Back!",
+  "thisMonthsSpending": "This Month's Spending",
+  "recentTransactions": "Recent Transactions",
+  "noTransactionsYet": "No transactions yet.",
+  "allExpenses": "All Expenses",
+  "noExpensesRecordedYet": "No expenses recorded yet.",
+  "addNewExpensePrompt": "Tap the \"Add New\" button to add your first expense!",
+  "spendingReports": "Spending Reports",
+  "notEnoughDataForReports": "Not enough data for reports.",
+  "addExpensesForPatterns": "Add some expenses to see your spending patterns.",
+  "filters": "Filters",
+  "category": "Category",
+  "allCategories": "All Categories",
+  "timeFrame1Week": "1 Week",
+  "timeFrame1Month": "1 Month",
+  "timeFrame1Year": "1 Year",
+  "timeFrameAllTime": "All Time",
+  "noExpensesMatchFilters": "No expenses match your current filters.",
+  "spendingSummary": "Spending Summary",
+  "totalSpentFiltered": "Total Spent (Filtered): {amount}",
+  "@totalSpentFiltered": {
+    "description": "Total amount spent with current filters",
+    "placeholders": {
+      "amount": {
+        "type": "String",
+        "example": "$123.45"
+      }
+    }
+  },
+  "mostSpentOn": "Most Spent On: {categoryName}",
+  "@mostSpentOn": {
+    "placeholders": {
+      "categoryName": {
+        "type": "String"
+      }
+    }
+  },
+  "numberOfTransactions": "Number of Transactions: {count}",
+  "@numberOfTransactions": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "byCategory": "By Category",
+  "noCategoryData": "No category data for current filters",
+  "last7DaysTrend": "Last 7 Days Trend",
+  "last30DaysTrendDaily": "Last 30 Days Trend (Daily)",
+  "last12MonthsTrend": "Last 12 Months Trend",
+  "overallTrendYearly": "Overall Trend (Yearly)",
+  "noTrendData": "No trend data for current filters",
+  "home": "Home",
+  "expenses": "Expenses",
+  "reports": "Reports",
+  "addNew": "Add New",
+  "settings": "Settings",
+  "appearance": "Appearance",
+  "themeMode": "Theme Mode",
+  "systemDefault": "System Default",
+  "lightMode": "Light Mode",
+  "darkMode": "Dark Mode",
+  "primaryColor": "Primary Color",
+  "language": "Language",
+  "appLanguage": "App Language",
+  "english": "English",
+  "czech": "Čeština",
+  "languageChangeDisclaimer": "Language preference saved. For full effect, some parts of the app might require a restart or a more complex live update mechanism.",
+  "expenseDeleted": "Expense deleted",
+  "addExpenseModalTitle": "Add New Expense",
+  "editExpenseModalTitle": "Edit Expense",
+  "titleDescription": "Title/Description",
+  "titleHint": "e.g. Coffee with friends",
+  "pleaseEnterTitle": "Please enter a title.",
+  "amount": "Amount",
+  "amountHint": "0.00",
+  "pleaseEnterAmount": "Please enter an amount.",
+  "pleaseEnterValidNumber": "Please enter a valid number.",
+  "amountMustBePositive": "Amount must be positive.",
+  "pleaseSelectCategory": "Please select a category",
+  "date": "Date: {date}",
+  "@date": {
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "changeDate": "Change Date",
+  "saveChanges": "Save Changes",
+  "addExpenseButton": "Add Expense",
+  "dashboardTitle": "FinTrack Dashboard",
+  "delete": "Delete",
+  "selectDate": "Select Date"
+}
